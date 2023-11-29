@@ -2,6 +2,123 @@
   text-align: center;
 }
 
+.menu-bar {
+  background-color: ffffff;
+  width: 100%;
+  color: black;
+  display: flex;
+
+  text-align: center;
+  align-items: center;
+}
+
+.menu-home-item {
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #3A923D;
+  text-decoration: none; 
+}
+
+.menu-bar-item {
+  margin-left: 20px;
+  font-weight: bold;
+  color: inherit;
+  text-decoration: none; 
+}
+
+.menu-bar-item:hover {
+  color: #3A923D;
+}
+
+.home {
+  display: flex;
+}
+
+.home-main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 5vw;
+  margin-top: 100px;
+}
+
+.home-main-title {
+  width: 100%;
+  text-align: left;
+  font-size: 4em;
+  margin-left: 5px;
+}
+
+.home-main-content {
+  width: 100%;
+  text-align: left;
+  font-size: 2em;
+  margin-left: 10px;
+  margin-top: 0px; 
+}
+
+.match {
+  display: flex;
+  flex-direction: column;
+}
+
+.match-main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.match-main-title {
+  width: 100%;
+  text-align: center;
+  font-size: 4em;
+}
+.match-main-sub{
+  text-align: center;
+  margin-left: 70px;
+  margin-top: 0px; 
+  margin-bottom: 30px; 
+}
+
+.reserve {
+  display: flex;
+  flex-direction: column;
+}
+
+.reserve-main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.reserve-main-title {
+  width: 100%;
+  text-align: center;
+  font-size: 4em;
+}
+
+
+.team {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.team-main-title {
+  width: 100%;
+  text-align: center;
+  font-size: 4em;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
