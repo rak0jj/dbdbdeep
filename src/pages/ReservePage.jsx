@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import styled from "styled-components";
 
-import BasicList from '../components/BasicList'; 
+import BasicList from "../components/BasicList";
 import PageLayout from "../components/PageLayout";
 
 const Frame = styled.div`
