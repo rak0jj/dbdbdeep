@@ -1,6 +1,5 @@
 //package dbdbdeep;
 
-import java.io.*;
 import java.sql.*;
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +13,7 @@ public class Main {
     public static final String PASSWORD = "comp322";
 
 //public static final String TABLE_NAMES[] = {"DEPARTMENT", "EMPLOYEE", "DEPT_LOCATIONS", "PROJECT", "WORKS_ON", "DEPENDENT"};
-
+    //장락영 바보
     public static final String phoneNumberRegex = "\\d{3}-\\d{4}-\\d{4}";
 
     static List<String> location = Arrays.asList("서울특별시", "부산광역시", "대구광역시", "울산광역시", "광주광역시", "인천광역시", "대전광역시", "세종특별자치시", "제주특별자치도", "경기도", "경상북도", "경상남도", "충청북도", "충청남도", "전라북도", "전라남도", "강원도");
