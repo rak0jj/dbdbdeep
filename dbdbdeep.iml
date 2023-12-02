@@ -23,7 +23,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://C:/apache-tomcat-10.1.16/lib/servlet-api.jar!/" />
+         <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/servlet-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
