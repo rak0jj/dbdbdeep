@@ -1,6 +1,5 @@
 //package dbdbdeep;
 
-import java.io.*;
 import java.sql.*;
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +13,7 @@ public class Main {
     public static final String PASSWORD = "comp322";
 
 //public static final String TABLE_NAMES[] = {"DEPARTMENT", "EMPLOYEE", "DEPT_LOCATIONS", "PROJECT", "WORKS_ON", "DEPENDENT"};
-
+    //장락영 바보
     public static final String phoneNumberRegex = "\\d{3}-\\d{4}-\\d{4}";
 
     static List<String> location = Arrays.asList("서울특별시", "부산광역시", "대구광역시", "울산광역시", "광주광역시", "인천광역시", "대전광역시", "세종특별자치시", "제주특별자치도", "경기도", "경상북도", "경상남도", "충청북도", "충청남도", "전라북도", "전라남도", "강원도");
@@ -43,7 +42,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Connection conn = null;
+        Connection conn;
         try {
             // JDBC 드라이버 로딩
             Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -262,10 +261,8 @@ public class Main {
                 String[] city = address.split("\\s+");
                 if (!sex.equals("M") && !sex.equals("F")) {
                     System.out.println("성별은 'M'혹은 'F'로 입력해주세요");
-                    continue;
                 } else if (!ageString.matches("\\d+") || !heightString.matches("\\d+")) {
                     System.out.println("나이와 키는 숫자로 입력해주세요");
-                    continue;
                 } else {
                     age = Integer.parseInt(ageString);
                     height = Integer.parseInt(heightString);
@@ -378,10 +375,8 @@ public class Main {
                 pstmt.executeUpdate();
                 conn.commit();
             }
-            return;
         } catch (SQLException e) {
             e.printStackTrace();
-            return;
         }
     }
 
@@ -394,7 +389,7 @@ public class Main {
             String name = scanner.nextLine();
 
             String sql = "SELECT user_id, sex, age, height, phone_number\r\n" + "FROM UserP \r\n" + "WHERE name = ?";
-            ResultSet res = null;
+            ResultSet res;
 
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, name);
@@ -412,10 +407,8 @@ public class Main {
             }
             res.close();
             System.out.println();
-            return;
         } catch (SQLException e) {
             e.printStackTrace();
-            return;
         }
     }
 
@@ -434,7 +427,7 @@ public class Main {
             System.out.println();
 
             String sql;
-            PreparedStatement pstmt = null;
+            PreparedStatement pstmt;
             switch (category) {
                 case 1:
                     System.out.print("가입할 팀 id: ");
@@ -493,17 +486,14 @@ public class Main {
                 default:
                     System.out.println("1~3 사이의 값을 선택해주세요\n");
             }
-            return;
         } catch (SQLException e) {
             e.printStackTrace();
-            return;
         }
     }
 
 
     private static void placeFunction(Scanner scanner, Connection conn) {
         try {
-
             System.out.println("-- 구장 관련 기능");
             System.out.println("실행할 기능 목록");
             System.out.println("1. 내 주변 구장 목록");
@@ -515,8 +505,8 @@ public class Main {
             System.out.println();
 
             String sql = "";
-            PreparedStatement pstmt = null;
-            ResultSet res = null;
+            PreparedStatement pstmt;
+            ResultSet res;
             switch (category) {
 //                case 1:
 //                    String[] addressList = user.name.split("\\s");
@@ -581,10 +571,8 @@ public class Main {
                 default:
                     System.out.println("1~3 사이의 값을 선택해주세요\n");
             }
-            return;
         } catch (SQLException e) {
             e.printStackTrace();
-            return;
         }
     }
 
@@ -600,9 +588,9 @@ public class Main {
             scanner.nextLine();
             System.out.println();
 
-            String sql = "";
-            PreparedStatement pstmt = null;
-            ResultSet res = null;
+            String sql;
+            PreparedStatement pstmt;
+            ResultSet res;
             switch (category) {
                 case 1:
                     System.out.println("강의 중인 강사 정보 리스트");
@@ -648,10 +636,8 @@ public class Main {
                 default:
                     System.out.println("1~2 사이의 값을 선택해주세요\n");
             }
-            return;
         } catch (SQLException e) {
             e.printStackTrace();
-            return;
         }
     }
 
@@ -718,10 +704,8 @@ public class Main {
                 default:
                     System.out.println("1~3 사이의 값을 선택해주세요\n");
             }
-            return;
         } catch (SQLException e) {
             e.printStackTrace();
-            return;
         }
     }
 
@@ -755,10 +739,8 @@ public class Main {
             }
             res.close();
             System.out.println();
-            return;
         } catch (SQLException e) {
             e.printStackTrace();
-            return;
         }
     }
 }
