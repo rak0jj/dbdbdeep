@@ -22,6 +22,7 @@
     <title>COMP322: Introduction to Databases</title>
 </head>
 <body>
+<button onclick="alert('버튼이 눌렸습니다.')">버튼</button>
 <h1>Lab #9: Repeating Lab #5-3 via JSP</h1>
 <%
     String serverIP = "localhost";
