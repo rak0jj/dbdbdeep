@@ -9,8 +9,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
     request.setCharacterEncoding("UTF-8");
 
@@ -25,7 +24,7 @@
     PreparedStatement pstmt = null;
     ResultSet rs = null;
     String sql = "SELECT * " + "FROM userp " + "WHERE user_id = ? " + "AND phone_number = ?";
-    try{
+    try {
         // 드라이버 호출
         Class.forName("oracle.jdbc.driver.OracleDriver");
 
@@ -40,7 +39,7 @@
         // sql실행
         rs = pstmt.executeQuery();
 
-        if(rs.next()){ // 로그인 성공(인증의 수단 session)
+        if (rs.next()) { // 로그인 성공(인증의 수단 session)
             id = rs.getString("id");
             String user_phonenumber = rs.getString("user_phonenumber");
 
@@ -49,19 +48,15 @@
 
             response.sendRedirect("login_welcome.jsp"); // 페이지이동
 
-        } else{ // 로그인 실패
+        } else { // 로그인 실패
             response.sendRedirect("login_fail.jsp"); // 실패 페이지
         }
-    } catch(Exception e){
+        conn.close();
+        pstmt.close();
+        rs.close();
+    }
+    catch(Exception e) {
         e.printStackTrace();
         response.sendRedirect("login.jsp"); // 에러가 난 경우도 리다이렉트
-    } finally{
-        try{
-            if(conn != null) conn.close();
-            if(pstmt != null) pstmt.close();
-            if(rs != null) rs.close();
-        } catch(Exception e){
-            e.printStackTrace();
-        }
     }
 %>
