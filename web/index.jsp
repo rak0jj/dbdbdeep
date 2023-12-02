@@ -25,7 +25,7 @@
 <h1>Lab #9: Repeating Lab #5-3 via JSP</h1>
 <%
     String serverIP = "localhost";
-    String strSID = "orcl";
+    String strSID = "orcl"; //mac:xe
     String portNum = "1521";
     String user = "university";
     String pass = "comp322";
