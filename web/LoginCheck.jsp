@@ -34,6 +34,8 @@
         rs = pstmt.executeQuery();
 
         if (rs.next()) { // 로그인 성공(인증의 수단 session)
+            session.setAttribute("user_id",userid);
+            session.setAttribute("phone_number",pwd);
             response.sendRedirect("MainPage.jsp"); // 페이지이동
         } else { // 로그인 실패
             response.sendRedirect("LoginPage.html"); // 실패 페이지
