@@ -14,17 +14,18 @@
 <%
     request.setCharacterEncoding("UTF-8");
 
-    String id = request.getParameter("id");
-    String pw = request.getParameter("pw");
+    String userid = request.getParameter("userid");
+    String pwd = request.getParameter("pwd");
     // DB연결에 필요한 변수 선언
     String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     String USER = "dbdbdeep";
     String PASSWORD = "comp322";
 
     Connection conn = null;
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
+    PreparedStatement pstmt;
+    ResultSet rs;
     String sql = "SELECT * " + "FROM userp " + "WHERE user_id = ? " + "AND phone_number = ?";
+
     try{
         // 드라이버 호출
         Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -34,34 +35,28 @@
 
         // pstmt 생성
         pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, id);
-        pstmt.setString(2, pw);
+        pstmt.setString(1, userid);
+        pstmt.setString(2, pwd);
 
         // sql실행
         rs = pstmt.executeQuery();
 
         if(rs.next()){ // 로그인 성공(인증의 수단 session)
-            id = rs.getString("id");
-            String user_phonenumber = rs.getString("user_phonenumber");
+            userid = rs.getString("userid");
+            String phone_number = rs.getString("phone_number");
 
-            session.setAttribute("user_id", id);
-            session.setAttribute("user_phonenumber", user_phonenumber);
+            if(!userid.equals(request.getParameter("userid")) || !phone_number.equals(request.getParameter("pwd"))){
+                // 로그인 실패
+                response.sendRedirect("login_fail.jsp");
+            } else {
+                session.setAttribute("user_id", userid);
+                session.setAttribute("phone_number", phone_number);
 
-            response.sendRedirect("login_welcome.jsp"); // 페이지이동
-
-        } else{ // 로그인 실패
-            response.sendRedirect("login_fail.jsp"); // 실패 페이지
+                response.sendRedirect("login_welcome.jsp"); // 페이지이동
+            }
         }
-    } catch(Exception e){
+    } catch(Exception e) {
         e.printStackTrace();
-        response.sendRedirect("login.jsp"); // 에러가 난 경우도 리다이렉트
-    } finally{
-        try{
-            if(conn != null) conn.close();
-            if(pstmt != null) pstmt.close();
-            if(rs != null) rs.close();
-        } catch(Exception e){
-            e.printStackTrace();
-        }
+        response.sendRedirect("login.jsp"); // 에러가 난 경우도 리다이렉
     }
 %>
