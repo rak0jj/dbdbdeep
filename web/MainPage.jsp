@@ -39,13 +39,13 @@
 <a href="getInfo.jsp">정보수정</a><br/>
 <a href="delete_ok.jsp">회원탈퇴</a><br/>
 
-<a class="button-style">1</a>
-<a class="button-style">2</a>
-<a class="button-style">3</a>
-<a class="button-style">4</a>
-<a class="button-style">5</a>
-<a class="button-style">6</a>
-<a class="button-style">7</a>
+<a href="UserPage.jsp" class="button-style">1</a>
+<a href="TeamPage.jsp" class="button-style">2</a>
+<a href="PlacePage.jsp" class="button-style">3</a>
+<a href="InstructorPage.jsp" class="button-style">4</a>
+<a href="MatchPage.jsp" class="button-style">5</a>
+<a href="RefereePage.jsp" class="button-style">6</a>
+<a href="UserInfoChangePage.jsp" class="button-style">7</a>
 
 
 </body>
