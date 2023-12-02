@@ -9,7 +9,7 @@
     String userid = request.getParameter("userid");
     String pwd = request.getParameter("pwd");
     // DB연결에 필요한 변수 선언
-    String URL = "jdbc:oracle:thin:@localhost:1521:orcl";
+    String URL = "jdbc:oracle:thin:@localhost:1521:orcl"; //mac : xe
     String USER = "dbdbdeep";
     String PASSWORD = "comp322";
 
