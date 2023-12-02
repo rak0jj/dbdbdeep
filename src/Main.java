@@ -12,7 +12,7 @@ public class Main {
     public static final String USER = "dbdbdeep";
     public static final String PASSWORD = "comp322";
 
-//public static final String TABLE_NAMES[] = {"DEPARTMENT", "EMPLOYEE", "DEPT_LOCATIONS", "PROJECT", "WORKS_ON", "DEPENDENT"};
+    //public static final String TABLE_NAMES[] = {"DEPARTMENT", "EMPLOYEE", "DEPT_LOCATIONS", "PROJECT", "WORKS_ON", "DEPENDENT"};
     //장락영 바보
     public static final String phoneNumberRegex = "\\d{3}-\\d{4}-\\d{4}";
 
