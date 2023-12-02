@@ -34,9 +34,9 @@
         rs = pstmt.executeQuery();
 
         if (rs.next()) { // 로그인 성공(인증의 수단 session)
-            response.sendRedirect("login_welcome.jsp"); // 페이지이동
+            response.sendRedirect("MainPage.jsp"); // 페이지이동
         } else { // 로그인 실패
-            response.sendRedirect("login_fail.jsp"); // 실패 페이지
+            response.sendRedirect("LoginPage.html"); // 실패 페이지
         }
         conn.close();
         pstmt.close();
@@ -44,6 +44,6 @@
     }
     catch(Exception e) {
         e.printStackTrace();
-        response.sendRedirect("login.jsp"); // 에러가 난 경우도 리다이렉트
+        response.sendRedirect("LoginPage.html"); // 에러가 난 경우도 리다이렉트
     }
 %>
