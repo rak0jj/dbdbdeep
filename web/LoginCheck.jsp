@@ -9,7 +9,7 @@
     String userid = request.getParameter("userid");
     String pwd = request.getParameter("pwd");
     // DB연결에 필요한 변수 선언
-    String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+    String URL = "jdbc:oracle:thin:@localhost:1521:orcl";
     String USER = "dbdbdeep";
     String PASSWORD = "comp322";
 
@@ -34,18 +34,7 @@
         rs = pstmt.executeQuery();
 
         if (rs.next()) { // 로그인 성공(인증의 수단 session)
-            userid = rs.getString("user_id");
-            String user_phonenumber = rs.getString("phone_number");
-
-            if(!userid.equals(request.getParameter("userid")) || !user_phonenumber.equals(request.getParameter("pwd"))){
-                // 로그인 실패
-                response.sendRedirect("login_fail.jsp");
-            } else {
-                session.setAttribute("user_id", userid);
-                session.setAttribute("phone_number", user_phonenumber);
-
-                response.sendRedirect("login_welcome.jsp"); // 페이지이동
-            }
+            response.sendRedirect("login_welcome.jsp"); // 페이지이동
         } else { // 로그인 실패
             response.sendRedirect("login_fail.jsp"); // 실패 페이지
         }
