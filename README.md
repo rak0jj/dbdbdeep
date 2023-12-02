@@ -1,8 +1,11 @@
-# dbdbdeep
-2023sem2 DB Project
+# DBDBdeep 스포츠 팀 매칭 서비스
+<hr/>
 
-## git commit message head
-Feat : 새로운 기능 추가, 기존의 기능을 요구 사항에 맞추어 수정  
+### 2023 Fall Semester DB Project 13 Team
+스포츠 팀 매칭 서비스 입니닭
+
+### git commit message head
+>Feat : 새로운 기능 추가, 기존의 기능을 요구 사항에 맞추어 수정  
 Fix : 기능에 대한 버그 수정  
 Build : 빌드 관련 수정  
 Chore : 패키지 매니저 수정, 그 외 기타 수정 ex) .gitignore  
