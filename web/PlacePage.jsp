@@ -8,6 +8,8 @@
     <title>Place Page</title>
 </head>
 <h1>구장 페이지</h1>
+<table border="1">
+<h2>지역 별 구장 정보</h2>
 <form action="PlacePage.jsp" method="post">
     <input type="text" id="place" name="place" placeholder="지역">
     <input type="submit" value="검색">
@@ -33,7 +35,7 @@
             pstmt.setString(1, request.getParameter("place") + "%");
             rs = pstmt.executeQuery();
     %>
-    <table border="1">
+
         <tr>
             <th>구장 ID</th>
             <th>지역</th>
@@ -56,7 +58,9 @@
         countPstmt = conn.prepareStatement(countSql);
         countRs = countPstmt.executeQuery();
         %>
+
         <table border="1"><br>
+            <h2>지역 별 구장 수</h2>
             <tr>
                 <th>지역</th>
                 <th>구장 수</th>
@@ -71,25 +75,17 @@
                 <%
                 }
 
-        String userAddress = "user.address";
+    String userAddress = (String) session.getAttribute("user_address");
         String[] addressList = userAddress.split("\\s");
         String city = addressList[0] + '%';
-        String nearbySql = "SELECT Place_id, Location " +
-                           "FROM place " +
-                           "WHERE Place_id IN ( " +
-                           "  SELECT Mplace_id " +
-                           "  FROM game " +
-                           "  WHERE Mplace_id IN ( " +
-                           "    SELECT Place_id " +
-                           "    FROM place " +
-                           "    WHERE Location LIKE ? " +
-                           "  )" +
-                           ")";
+        String nearbySql = "SELECT Place_id, Location FROM place WHERE Place_id IN ( SELECT Mplace_id FROM game WHERE Mplace_id IN ( SELECT Place_id FROM place WHERE Location LIKE ? ) )";
+
         nearbyPstmt = conn.prepareStatement(nearbySql);
         nearbyPstmt.setString(1, city);
         nearbyRs = nearbyPstmt.executeQuery();
         %>
             <table border="1"><br>
+                <h2>내 주변 구장</h2>
                 <tr>
                     <th>내 주변 구장 ID</th>
                     <th>위치</th>
