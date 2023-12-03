@@ -6,27 +6,38 @@
 
     <%
         request.setCharacterEncoding("UTF-8");
-        String param1 = request.getParameter("param1");
         String error1 = request.getParameter("error1");
-        if(param1!=null) {
-            Integer cd1 = Integer.parseInt(param1);
-            if(cd1==1){
-                %>
-    <script>
-        alert("이건 1이야");
-    </script>
-    <%
-            }
-    %>
-    <script>
-        alert("아이디가 중복되거나 조건이 충족 되지 않습니다");
-    </script>
-    <%
-        }
-        if(error1!="0" && error1!=null){
+
+        if(error1!=null) {
+            Integer EN1 = Integer.parseInt(error1);
+            if (EN1 == 1) {
     %>
     <script>
         alert("성별은 'M'혹은 'F'로 입력해주세요");
+    </script>
+    <%
+            } else if (EN1 == 2) {
+    %>
+    <script>
+        alert("나이와 키는 숫자로 입력해주세요");
+    </script>
+    <%
+            } else if (EN1 == 3) {
+    %>
+    <script>
+        alert("정상적이지 않은 값이 있습니다");
+    </script>
+    <%
+            } else if (EN1 == 4) {
+    %>
+    <script>
+        alert("아이디가 중복됩니다");
+    </script>
+    <%
+            }
+            %>
+    <script>
+        alert(ENCODE);
     </script>
     <%
         }
@@ -65,7 +76,7 @@
                 <td><input type="text" name="address" id="address" /></td>
             </tr>
         </table>
-        <input type="submit" value="로그인">
+        <input type="submit" value="회원가입">
     </fieldset>
 </form>
 </body>
