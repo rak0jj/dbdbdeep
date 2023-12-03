@@ -71,9 +71,6 @@
                 <%
                 }
 
-        // 사용자 주소를 기반으로 주변의 구장을 조회하는 SQL 쿼리
-        // 사용자의 주소는 'user.address'라는 가정 하에 작성되었습니다.
-        // 실제로는 사용자의 주소를 얻는 방법을 적용해야 합니다.
         String userAddress = "user.address";
         String[] addressList = userAddress.split("\\s");
         String city = addressList[0] + '%';
