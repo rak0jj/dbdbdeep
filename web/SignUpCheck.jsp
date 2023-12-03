@@ -1,5 +1,12 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: bmj20
+  Date: 2023-12-03
+  Time: 오후 2:22
+  To change this template use File | Settings | File Templates.
+--%>
 <%@page import="java.sql.*"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
     request.setCharacterEncoding("UTF-8");
 
