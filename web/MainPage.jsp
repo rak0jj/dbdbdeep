@@ -29,10 +29,26 @@
             /*border: #3A923D;*/
         }
     </style>
+
+    <%
+        request.setCharacterEncoding("UTF-8");
+        String param1 = request.getParameter("param1");
+        if(param1!=null) {
+            out.println(param1);
+        }
+        else{
+            out.println("null이 반환됐다");
+        }
+    %>
 </head>
 <body>
-
-<%=session.getAttribute("user_id") %>님 안녕하세요
+<%
+    String userId = request.getParameter("userid");
+    if(userId==null) {
+        userId="null";
+    }
+%>
+<%=userId%>님 안녕하세요
 <br/>
 
 <a href="logout.jsp">로그아웃</a><br/>

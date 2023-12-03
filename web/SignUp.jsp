@@ -3,59 +3,70 @@
 <html>
 <head>
     <title>회원가입란</title>
+
+    <%
+        request.setCharacterEncoding("UTF-8");
+        String param1 = request.getParameter("param1");
+        String error1 = request.getParameter("error1");
+        if(param1!=null) {
+            Integer cd1 = Integer.parseInt(param1);
+            if(cd1==1){
+                %>
+    <script>
+        alert("이건 1이야");
+    </script>
+    <%
+            }
+    %>
+    <script>
+        alert("아이디가 중복되거나 조건이 충족 되지 않습니다");
+    </script>
+    <%
+        }
+        if(error1!="0" && error1!=null){
+    %>
+    <script>
+        alert("성별은 'M'혹은 'F'로 입력해주세요");
+    </script>
+    <%
+        }
+    %>
 </head>
 <body>
-<form name = "frm" action="SignUp.jsp" method="post" onsubmit = "return formCheck()">
+<form name = "frm" action="SignUpCheck.jsp" method="post">
     <fieldset>
         <table>
             <tr>
-                <td><label for="id">아이디</label></td>
-                <td><input type="text" name="id" id="id" /></td>
+                <td><label for="userId">아이디</label></td>
+                <td><input type="text" name="userId" id="userId" placeholder="장락영 바보" /></td>
             </tr>
             <tr>
                 <td><label for="Pwd2">비밀번호</label></td>
-                <td><input type="password" name="Pwd" id="Pwd2" /></td>
+                <td><input type="password" name="Pwd2" id="Pwd2" placeholder="전화번호 형식"/></td>
             </tr>
             <tr>
                 <td><label for="userName">사용자 이름</label></td>
                 <td><input type="text" name="userName" id="userName" /></td>
             </tr>
             <tr>
-                <td><label for="Gender">성별(M/F)</label></td>
-                <td><input type="text" name="Gender" id="Gender" /></td>
+                <td><label for="sex">성별(M/F)</label></td>
+                <td><input type="text" name="sex" id="sex" /></td>
             </tr>
             <tr>
-                <td><label for="Age">나이</label></td>
-                <td><input type="text" name="Age" id="Age" /></td>
+                <td><label for="age">나이</label></td>
+                <td><input type="text" name="age" id="age" /></td>
             </tr>
             <tr>
-                <td><label for="Height">신장</label></td>
-                <td><input type="text" name="Height" id="Height" /></td>
+                <td><label for="height">신장</label></td>
+                <td><input type="text" name="height" id="height" placeholder="ex.173cm" /></td>
             </tr>
             <tr>
-                <td><label for="Address">주소(도로명 주소)</label></td>
-                <td><input type="text" name="Address" id="Address" /></td>
+                <td><label for="address">주소(도로명 주소)</label></td>
+                <td><input type="text" name="address" id="address" /></td>
             </tr>
         </table>
+        <input type="submit" value="로그인">
     </fieldset>
-    <input type ="" value = "회원가입"><br>
 </form>
-    <label for="userid"></label><br>
-    <input type="text" id="userid" name="userid" placeholder="아이디"><br>
-    <label for="pwd"></label><br>
-    <input type="password" id="pwd" name="pwd" placeholder="전화번호(비밀번호)"><br>
-    <input type="submit" value="로그인">
-
-    <button onclick="showAlert()">알림 보이기</button>
-
 </body>
-
-<script>
-    function showAlert() {
-        alert("알림: 버튼을 클릭했습니다!");
-        out.print("흠");
-    }
-</script>
-
-
 </html>
