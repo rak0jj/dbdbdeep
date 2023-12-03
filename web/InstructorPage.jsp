@@ -1,84 +1,63 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: seakim
-  Date: 12/2/23
-  Time: 9:04 PM
-  To change this template use File | Settings | File Templates.
---%>
-
-<%--
- private static void instructorFunction(Scanner scanner, Connection conn) {
-        try {
-            System.out.println("-- 강사 관련 기능");
-            System.out.println("실행할 기능 목록");
-            System.out.println("1. 강의 중인 강사 정보 리스트");
-            System.out.println("2. 종목 & 월급 -> 강사 검색");
-            System.out.println("3. 뒤로가기");
-            System.out.print("카테고리 선택: ");
-            int category = scanner.nextInt();
-            scanner.nextLine();
-            System.out.println();
-
-            String sql;
-            PreparedStatement pstmt;
-            ResultSet res;
-            switch (category) {
-                case 1:
-                    System.out.println("강의 중인 강사 정보 리스트");
-                    sql = "SELECT i.Name AS InstructorName, t.Team_id AS TeamID\r\n" + "FROM instructor i, teach te, team t\r\n" + "WHERE i.Instructor_id = te.Tinstructor_id AND te.Tteam_id = t.Team_id";
-                    pstmt = conn.prepareStatement(sql);
-                    res = pstmt.executeQuery();
-
-                    while (res.next()) {
-                        String instructorname = res.getString(1);
-                        String teamid = res.getString(2);
-                        System.out.println("강사명: " + instructorname + ", 맡은 팀 id: " + teamid);
-                    }
-                    res.close();
-                    System.out.println();
-                    break;
-                case 2:
-                    System.out.println("종목 & 월급 -> 강사 검색");
-                    System.out.print("종목: ");
-                    String sports = scanner.nextLine();
-                    System.out.print("월급: ");
-                    int salary = scanner.nextInt();
-                    scanner.nextLine();
-                    System.out.println();
-
-                    sql = "SELECT instructor_id, name, phone_number, salary\r\n" + "FROM INSTRUCTOR\r\n" + "WHERE sports=? and salary=?";
-                    pstmt = conn.prepareStatement(sql);
-                    pstmt.setString(1, sports);
-                    pstmt.setInt(2, salary);
-                    res = pstmt.executeQuery();
-
-                    while (res.next()) {
-                        String instructor_id = res.getString(1);
-                        String name = res.getString(2);
-                        String phone_number = res.getString(3);
-                        int salary2 = res.getInt(4);
-                        System.out.println("강사 id: " + instructor_id + ", 이름: " + name + ", 연락처: " + phone_number + ", 월급: " + salary2);
-                    }
-                    res.close();
-                    System.out.println();
-                    break;
-                case 3:
-                    return;
-                default:
-                    System.out.println("1~2 사이의 값을 선택해주세요\n");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
---%>
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page import="java.sql.DriverManager" %>
+<%@page import="java.sql.ResultSet" %>
+<%@page import="java.sql.PreparedStatement" %>
+<%@page import="java.sql.Connection" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Instructor Page</title>
 </head>
+<h1>강사 페이지</h1>
 <body>
+<%
+    request.setCharacterEncoding("UTF-8");
+    // DB연결에 필요한 변수 선언
+    String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
+    String USER = "dbdbdeep";
+    String PASSWORD = "comp322";
 
+    Connection conn = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+
+    try {
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        conn = DriverManager.getConnection(URL, USER, PASSWORD);
+        String sql = "SELECT i.Name AS InstructorName, t.Team_id AS TeamID\r\n FROM instructor i, teach te, team t\r\n WHERE i.Instructor_id = te.Tinstructor_id AND te.Tteam_id = t.Team_id";
+        pstmt = conn.prepareStatement(sql);
+        rs = pstmt.executeQuery();
+        int list_number=0;
+%>
+<table border="1">
+    <h3>강의 중인 강사</h3>
+    <a href="InstructorSearch.jsp">강사 검색하기</a><br/>
+    <tr>
+        <th></th>
+        <th>강사명</th>
+        <th>맡은 팀 ID</th>
+    </tr>
+    <%
+        while (rs.next()) {
+            list_number++;
+    %>
+    <tr>
+        <td><%= list_number %></td>
+        <td><%= rs.getString(1) %>
+        </td>
+        <td><%= rs.getString(2) %>
+        </td>
+    </tr>
+    <%
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) try { rs.close(); } catch(Exception e) {}
+            if (pstmt != null) try { pstmt.close(); } catch(Exception e) {}
+            if (conn != null) try { conn.close(); } catch(Exception e) {}
+        }
+    %>
+
+</table>
 </body>
 </html>
