@@ -21,6 +21,7 @@
     <input type="text" id="place" name="place">
     <input type="submit" value="검색">
 </form>
+<button onclick="location.href='MainPage.jsp'">메인 페이지</button>
 <ul>
     <body>
         <%
