@@ -65,7 +65,7 @@
         rs = pstmt.executeQuery();
         String nextPage = null;
         if (rs.next()) { // 중복 아이디 존재
-            nextPage = "SignUp.jsp?param1=1";
+            nextPage = "SignUp.jsp?error1=4";
         } else {// 회원가입 성공
             sql = "INSERT INTO userp VALUES(?,?,?,?,?,?,?)";
             pstmt = conn.prepareStatement(sql);
