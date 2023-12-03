@@ -36,14 +36,14 @@
             session.setAttribute("user_address",rs.getString("address")); // 주소 정보를 세션에 저장
             response.sendRedirect("MainPage.jsp"); // 페이지이동
         } else { // 로그인 실패
-            response.sendRedirect("LoginPage.html"); // 실패 페이지
+            response.sendRedirect("LoginPage.jsp"); // 실패 페이지
         }
         conn.close();
         pstmt.close();
         rs.close();
     }
     catch(Exception e) {
-        e.printStackTrace();
-        response.sendRedirect("LoginPage.html"); // 에러가 난 경우도 리다이렉트
+        e.  printStackTrace();
+        response.sendRedirect("LoginPage.jsp"); // 에러가 난 경우도 리다이렉트
     }
 %>
