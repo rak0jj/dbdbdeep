@@ -19,21 +19,12 @@
     </content>
     <orderEntry type="jdk" jdkName="21" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="oracle_jdbc_drivers" level="project" />
+    <orderEntry type="library" name="ojdbc10" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 10.1.16" level="application_server_libraries" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://C:/apache-tomcat-10.1.16/lib/jsp-api.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" exported="" scope="PROVIDED" name="TomEE 10.1.16" level="application_server_libraries" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/websocket-client-api.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/websocket-client-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -42,7 +33,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/websocket-api.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/websocket-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -51,7 +42,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/tomcat-websocket.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/tomcat-websocket.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -60,7 +51,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/tomcat-util.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/tomcat-util.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -69,7 +60,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/tomcat-util-scan.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/tomcat-util-scan.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -78,7 +69,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/tomcat-jni.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/tomcat-jni.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -87,7 +78,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/tomcat-jdbc.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/tomcat-jdbc.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -96,7 +87,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/tomcat-dbcp.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/tomcat-dbcp.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -105,7 +96,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/tomcat-coyote.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/tomcat-coyote.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -114,7 +105,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/tomcat-api.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/tomcat-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -123,7 +114,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/servlet-api.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/servlet-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -132,7 +123,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/jsp-api.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/jsp-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -141,7 +132,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/jaspic-api.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/jaspic-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -150,7 +141,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/jasper.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/jasper.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -159,7 +150,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/jasper-el.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/jasper-el.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -168,7 +159,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/jakartaee-migration-1.0.7-shaded.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/jakartaee-migration-1.0.7-shaded.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -177,7 +168,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/el-api.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/el-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -186,7 +177,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/ecj-4.27.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/ecj-4.27.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -195,7 +186,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/catalina.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/catalina.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -204,7 +195,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/catalina-tribes.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/catalina-tribes.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -213,7 +204,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/catalina-storeconfig.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/catalina-storeconfig.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -222,7 +213,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/catalina-ssi.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/catalina-ssi.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -231,7 +222,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/catalina-ha.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/catalina-ha.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -240,7 +231,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/catalina-ant.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/catalina-ant.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -249,7 +240,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../apache-tomcat-10.1.16/lib/annotations-api.jar!/" />
+          <root url="jar://C:/Users/apache-tomcat-10.1.16/lib/annotations-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

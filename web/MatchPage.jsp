@@ -5,12 +5,18 @@
   Time: 9:04 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.text.*"%>
 <html>
 <head>
-    <title>Title</title>
+    <title>MatchPage</title>
 </head>
 <body>
+
+<a href="matchMonthlyInfo.html">1. 월별 경기 정보</a><br/>
+<a href="matchRegionalInfo.html">2. 지역별 경기 정보</a><br/>
+<a href="MainPage.jsp">3. 뒤로가기</a><br/>
 
 </body>
 </html>

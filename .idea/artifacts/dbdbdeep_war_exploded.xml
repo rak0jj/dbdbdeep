@@ -7,9 +7,6 @@
         <element id="directory" name="classes">
           <element id="module-output" name="dbdbdeep" />
         </element>
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="oracle_jdbc_drivers" />
-        </element>
       </element>
     </root>
   </artifact>

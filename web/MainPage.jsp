@@ -33,7 +33,7 @@
 <body>
 
 <%=session.getAttribute("user_id") %>님 안녕하세요
-
+<br/>
 
 <a href="logout.jsp">로그아웃</a><br/>
 <a href="getInfo.jsp">정보수정</a><br/>
