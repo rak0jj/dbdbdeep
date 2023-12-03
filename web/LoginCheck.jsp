@@ -33,6 +33,7 @@
         if (rs.next()) { // 로그인 성공(인증의 수단 session)
             session.setAttribute("user_id",userid);
             session.setAttribute("phone_number",pwd);
+            session.setAttribute("user_address",rs.getString("address")); // 주소 정보를 세션에 저장
             response.sendRedirect("MainPage.jsp"); // 페이지이동
         } else { // 로그인 실패
             response.sendRedirect("LoginPage.html"); // 실패 페이지
