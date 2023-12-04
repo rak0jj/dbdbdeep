@@ -254,7 +254,10 @@ Test : 테스트 코드 추가/수정
 - JAVA 11 (Module SDK Project SDK 11)
 
 #### (2) windows 11
-
+- Oracle JDK 21
+- tomcat 10.1.16
+- IntelliJ 2023.2.5
+- JAVA 21 (Module SDK Project SDK 21)
 
 
 ### 6. 데모동영상 : https://youtu.be/hHc_LGLFYvg
