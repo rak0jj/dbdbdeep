@@ -27,18 +27,17 @@
 </head>
 <a href="MainPage.jsp" class="back-button">뒤로가기</a><br/>
 <h1>구장 페이지</h1>
-
 <table border="1">
     <h2>1. 지역 별 구장 정보</h2>
     <form action="PlacePage.jsp" method="post">
         <input type="text" id="place" name="place" placeholder="지역">
         <input type="submit" value="검색">
-    </form><br/>
+    </form>
+    <br/>
     <ul>
         <body>
         <%
             request.setCharacterEncoding("UTF-8");
-            // DB연결에 필요한 변수 선언
             String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
             String USER = "dbdbdeep";
             String PASSWORD = "comp322";
@@ -74,7 +73,6 @@
             </td>
             <td><%= rs.getString(4) %>원</td>
         </tr>
-
         <%
             }
 
