@@ -108,7 +108,7 @@
     <a href="InstructorSearch.jsp" class="main-button">강사 정보 검색하기</a><br/><br/>
     <%
         request.setCharacterEncoding("UTF-8");
-        String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
+        String URL = "jdbc:oracle:thin:@localhost:1521:orcl"; //mac : xe
         String USER = "dbdbdeep";
         String PASSWORD = "comp322";
 
