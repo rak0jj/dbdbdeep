@@ -2,15 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <style>
+        .back-button {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #F3B234;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 12px;
+        }
+
+        .back-button:hover {
+            background-color: #F3B234;
+        }
+    </style>
     <title>Title</title>
 </head>
 <body>
-    <form action="matchRegionalInfo.jsp" method="post">
-        <h1>지역별 경기 정보 검색</h1>
-        <input type="text" id="sports" name="sports" placeholder="종목"><br>
-        <input type="text" id="region" name="region" placeholder="지역"><br>
-        <input type="submit" value="검색">
-    </form>
-    <a href="MatchPage.jsp">뒤로가기</a><br/>
+<form action="matchRegionalInfo.jsp" method="post">
+    <a href="MatchPage.jsp" class="back-button">뒤로가기</a><br/>
+    <h1>지역별 경기 정보 검색</h1>
+    <input type="text" id="sports" name="sports" placeholder="종목"><br>
+    <input type="text" id="region" name="region" placeholder="지역"><br>
+    <input type="submit" value="검색">
+</form>
 </body>
 </html>
