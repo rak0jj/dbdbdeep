@@ -257,5 +257,5 @@ Test : 테스트 코드 추가/수정
 
 
 
-### 6. 데모동영상 : Youtube Link
+### 6. 데모동영상 : https://youtu.be/hHc_LGLFYvg
 
