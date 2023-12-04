@@ -23,6 +23,13 @@
     </script>
     <%
             }
+            else if (EN1 == 3) {
+    %>
+    <script>
+        alert("팀 탈퇴에 성공하셨습니다.");
+    </script>
+    <%
+            }
         }
     %>
 

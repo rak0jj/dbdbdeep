@@ -64,7 +64,7 @@
             }
 
             sql = "SELECT *\r\nFROM UserP U, team T, participate P\r\n"
-                    + "WHERE P.puser_id =? AND P.pteam_id = ?";
+                    + "WHERE P.puser_id =? AND P.pteam_id =?";
 
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, userId);
