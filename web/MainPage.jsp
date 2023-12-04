@@ -16,7 +16,6 @@
             display: flex;
             flex-direction: column;
         }
-G
         content-body {
             padding: 30px;
             display: flex;
