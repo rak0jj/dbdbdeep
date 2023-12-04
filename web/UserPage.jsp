@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@page import="java.sql.*"%>
-<%@page import="java.text.*"%>
+<%@page import="java.sql.*" %>
+<%@page import="java.text.*" %>
 <html>
 <head>
     <style>
@@ -40,18 +40,18 @@
         }
 
     </style>
-    <body>
-    <title>UserPage</title>
-    <a href="MainPage.jsp" class="main-button">메인 페이지</a>
-    <h1 class="bold-text">유저 정보 검색 페이지</h1>
-    <form action="UserPage.jsp" method="post">
-        <h1 class="content-text">검색을 원하는 사용자 이름을 입력하세요</h1>
-        <input type="text" id="name" name="name" placeholder="이름">
-        <input type="submit" value="검색">
-    </form>
+<body>
+<title>UserPage</title>
+<a href="MainPage.jsp" class="main-button">메인 페이지</a>
+<h1 class="bold-text">유저 정보 검색 페이지</h1>
+<form action="UserPage.jsp" method="post">
+    <h1 class="content-text">검색을 원하는 사용자 이름을 입력하세요</h1>
+    <input type="text" id="name" name="name" placeholder="이름">
+    <input type="submit" value="검색">
+</form>
 <ul>
 
-    <%
+        <%
         request.setCharacterEncoding("UTF-8");
         // DB연결에 필요한 변수 선언
         String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
@@ -73,37 +73,49 @@
             rs = pstmt.executeQuery();
     %>
     <form>
-    <table border="1">
-        <tr>
-            <th>사용자 ID</th>
-            <th>성별</th>
-            <th>나이</th>
-            <th>신장</th>
-            <th>연락처</th>
-        </tr>
-        <%
-            while (rs.next()) {
-        %>
-        <tr>
-            <td><%= rs.getString(1) %></td>
-            <td><%= (rs.getString(2)=="M"? "남자":"여자") %></td>
-            <td><%= rs.getInt(3) %>살</td>
-            <td><%= rs.getInt(4) %>cm</td>
-            <td><%= rs.getString(5) %></td>
-        </tr>
-        <%
+        <table border="1">
+            <tr>
+                <th>사용자 ID</th>
+                <th>성별</th>
+                <th>나이</th>
+                <th>신장</th>
+                <th>연락처</th>
+            </tr>
+            <%
+                while (rs.next()) {
+            %>
+            <tr>
+                <td><%= rs.getString(1) %>
+                </td>
+                <td><%= (rs.getString(2) == "M" ? "남자" : "여자") %>
+                </td>
+                <td><%= rs.getInt(3) %>살</td>
+                <td><%= rs.getInt(4) %>cm</td>
+                <td><%= rs.getString(5) %>
+                </td>
+            </tr>
+            <%
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    if (rs != null) try {
+                        rs.close();
+                    } catch (Exception e) {
+                    }
+                    if (pstmt != null) try {
+                        pstmt.close();
+                    } catch (Exception e) {
+                    }
+                    if (conn != null) try {
+                        conn.close();
+                    } catch (Exception e) {
+                    }
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                if (rs != null) try { rs.close(); } catch(Exception e) {}
-                if (pstmt != null) try { pstmt.close(); } catch(Exception e) {}
-                if (conn != null) try { conn.close(); } catch(Exception e) {}
-            }
-        %>
-    </table>
+            %>
+        </table>
     </form>
-    </body>
+</body>
 </ul>
 </head>
 </html>
