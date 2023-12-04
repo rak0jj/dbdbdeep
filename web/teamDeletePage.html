@@ -2,6 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>소속팀 탈퇴</title>
+
+    <script>
+        var url = window.location.href;
+        if(url.includes("param1")) {
+            var EN = url.slice(-1);
+            if (EN == "1") {
+                alert("팀 탈퇴에 실패하셨습니다.\n팀이 존재하지 않거나 가입하지 않았습니다.");
+            }
+        }
+    </script>
+
     <style>
         header {
             background-color: #3A3D92;
@@ -47,23 +59,55 @@
         .back-button:hover {
             background-color: #F3B234;
         }
+
+        .main-button {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #3A3D92;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 12px;
+        }
+
+        .main-button:hover {
+            background-color: #FFFFFF;
+            color: #2d2d82;
+        }
+        .main-button2 {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #FFFFFF;
+            color: #2d2d82;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .main-button2:hover {
+            background-color: #3A3D92;
+            color: #FFFFFF;
+        }
     </style>
-    <title>소속팀 탈퇴</title>
 </head>
 <body>
 <header>
     <div>
         <span style="font-family: 굴림체; font-size: 30px; text-align: center;">팀 탈퇴 기능</span>
-        <div>
-            <a href="TeamPage.jsp" class="back-button" style="float: right;">뒤로가기</a>
-        </div>
     </div>
 </header>
+<a href="MainPage.jsp" class="main-button2" style="float: right; position:fixed; margin-left: 90%; margin-top: 0.7%;">메인 페이지</a>
 <div class="container">
     <form action="teamDeletePage.jsp" method="post">
-        <h1>팀 탈퇴 기능</h1>
-        <input type="text" id="team_id" name="team_id" placeholder="팀 id"><br>
-        <input type="submit" value="탈퇴">
+        <h2>탈퇴할 팀의 코드를 입력해주세요</h2>
+        <input type="text" id="team_id" name="team_id" placeholder="팀 id" style="font-size:18px;"><br>
+        <input type="submit" value="탈퇴" class="main-button" style="font-size:20px; padding:4px; width:80px; margin-top:10px;"><br>
     </form>
 </div>
 </body>

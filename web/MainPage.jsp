@@ -29,6 +29,7 @@
             margin: 5px;
             background-color: #FFFFFF;
             color: #3A3D92;
+            transition: background-color 0.3s;
             text-decoration: none;
             border-radius: 5px;
             border: 2px solid #3A3D92;
@@ -49,6 +50,7 @@
             margin: 8px 30px;
             background-color: #3A3D92;
             color: #FFFFFF;
+            transition: background-color 0.3s;
             text-decoration: none;
             border: 1px solid #ccc;
             border-radius: 4px;

@@ -82,7 +82,7 @@
             pstmt.executeUpdate();
             conn.commit();
 
-            nextPage = "LoginPage.jsp?param1=" + userId;
+            nextPage = "LoginPage.jsp?param1=3";
         }
         conn.close();
         pstmt.close();
@@ -91,6 +91,6 @@
     }
     catch(Exception e) {
         e.printStackTrace();
-        response.sendRedirect("LoginPage.jsp"); // 에러가 난 경우도 리다이렉트
+        response.sendRedirect("SignupPage.jsp?error1=5"); // 에러가 난 경우도 리다이렉트
     }
 %>

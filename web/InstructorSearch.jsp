@@ -91,23 +91,56 @@
             background-color: #3A3D92;
             color: #fff;
         }
+        .main-button2 {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #FFFFFF;
+            color: #2d2d82;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .main-button2:hover {
+            background-color: #3A3D92;
+            color: #FFFFFF;
+        }
+        .main-button {
+            display: inline-block;
+            justify-content: center;
+            padding: 5px;
+            background-color: #3A3D92;
+            color: #FFFFFF;
+            border: 1px solid #ccc;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 12px;
+        }
+
+        .main-button:hover {
+            background-color: #FFFFFF;
+            color: #2d2d82;
+            border: 1px solid #ccc;
+        }
     </style>
 </head>
 <body>
 <header>
     <div>
         <span style="font-family: 굴림체; font-size: 30px; text-align: center;">강사 정보 조회하기</span>
-        <div>
-            <a href="MainPage.jsp" class="main-button" style="float: right;">메인 페이지</a>
-            <a href="InstructorPage.jsp" class="main-button" style="float: right;">뒤로가기</a>
-        </div>
     </div>
 </header>
+<a href="MainPage.jsp" class="main-button2" style="float: right; position:fixed; margin-left: 90%; margin-top: 0.7%;">메인 페이지</a>
 <div class="container">
     <form action="InstructorSearch.jsp" method="post">
-        <input type="text" id="sport" name="sport" placeholder="종목">
-        <input type="text" id="salaries" name="salaries" placeholder="월급">
-        <input type="submit" value="검색">
+        <input type="text" id="sport" name="sport" placeholder="종목" style="font-size:15px; width:100px;">
+        <input type="text" id="salaries" name="salaries" placeholder="월급" style="font-size:15px; margin-left:15px; width:140px;">
+        <input type="submit" class="main-button" value="검색" style="font-size:18px; width:80px; padding: 3px;">
     </form>
     <%
         request.setCharacterEncoding("UTF-8");

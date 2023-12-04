@@ -31,12 +31,30 @@
             text-align: center;
         }
 
-        .back-button {
+        .main-button2 {
             display: inline-block;
             justify-content: center;
             padding: 8px;
-            background-color: #F3B234;
-            color: #fff;
+            background-color: #FFFFFF;
+            color: #2d2d82;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .main-button2:hover {
+            background-color: #3A3D92;
+            color: #FFFFFF;
+        }
+        .main-button {
+            margin-top:10px;
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #3A3D92;
+            color: #FFFFFF;
             text-decoration: none;
             border-radius: 4px;
             cursor: pointer;
@@ -44,9 +62,11 @@
             font-size: 12px;
         }
 
-        .back-button:hover {
-            background-color: #F3B234;
+        .main-button:hover {
+            background-color: #FFFFFF;
+            color: #2d2d82;
         }
+
     </style>
     <title>연락처 변경</title>
 </head>
@@ -54,15 +74,13 @@
 <header>
     <div>
         <span style="font-family: 굴림체; font-size: 30px; text-align: center;">연락처 변경 페이지</span>
-        <div>
-            <a href="UserInfoChangePage.jsp" class="back-button" style="float: right;">뒤로가기</a>
-        </div>
     </div>
 </header>
+<a href="MainPage.jsp" class="main-button2" style="float: right; position:fixed; margin-left: 90%; margin-top: 0.7%;">메인 페이지</a>
 <div class="container">
     <form action="UserPhoneNumChangePage.jsp" method="post">
-        <input type="text" id="phone_number" name="phone_number" placeholder="변경할 연락처">
-        <input type="submit" value="입력">
+        <input type="text" id="phone_number" name="phone_number" placeholder="변경할 연락처" style="font-size:18px;"><br>
+        <input type="submit" value="입력" class="main-button" style="font-size:20px; width:80px"><br>
     </form>
 </div>
 <br/>

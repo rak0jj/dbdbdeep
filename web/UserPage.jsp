@@ -73,16 +73,14 @@
             padding: 8px;
             background-color: #FFFFFF;
             color: #2d2d82;
+            transition: background-color 0.3s;
             text-decoration: none;
             border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s;
             font-size: 12px;
         }
 
         .main-button2:hover {
-            background-color: #FFFFFF;
-            color: #2d2d82;
             background-color: #3A3D92;
             color: #FFFFFF;
         }
