@@ -1,5 +1,5 @@
 # DBDBdeep 스포츠 팀 매칭 서비스
-<hr/>
+<hr>
 
 ### 2023 Fall Semester DB Project 13 Team
 스포츠 팀 매칭 서비스 입니닭
@@ -50,8 +50,19 @@ WHERE sports=? and salary=?;
 
 #### (2) 로그인 관련 기능<br>
 [코드1] LoginCheck.jsp<br>
+기능1. 사용자의 ID에 따른 이름, 성별, 키, 연락처, 주소를 세션으로 저장해두어 다른 페이지에서도 사용할 수 있도록 한다.<br>
+
+```
+SELECT *
+FROM userp
+WHERE user_id = ?
+	AND phone_number = ?;
+```
+
 [코드2] LoginPage.jsp<br>
+기능1. 사용자가 입력한 아이디와 전화번호를 비밀번호로 받아 LoginCheck.jsp로 넘겨준다.<br>
 <br>
+
 
 #### (3) 메인페이지<br>
 [코드1] MainPage.jsp<br>
