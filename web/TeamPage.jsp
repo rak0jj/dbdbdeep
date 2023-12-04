@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  UserRepository.User: seakim
-  Date: 12/2/23
-  Time: 9:04 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -23,14 +16,26 @@
 
         form {
             background-color: #fff;
-            width: 300px;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        }
+
+        .back-button {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #F3B234;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 12px;
+        }
+
+        .back-button:hover {
+            background-color: #F3B234;
         }
 
         .content-button-style {
@@ -50,15 +55,13 @@
         }
     </style>
 </head>
-
 <body>
-
 <form>
+    <a href="MainPage.jsp" class="back-button">4. 뒤로가기</a>
     <h1>팀 페이지</h1>
     <a href="teamInsertPage.html" class="content-button-style">1. 팀 가입</a>
     <a href="teamSearchPage.jsp" class="content-button-style">2. 소속 팀 검색</a>
     <a href="teamDeletePage.html" class="content-button-style">3. 소속 팀 탈퇴</a>
-    <a href="MainPage.jsp" class="content-button-style">4. 뒤로가기</a>
 </form>
 </body>
 </html>

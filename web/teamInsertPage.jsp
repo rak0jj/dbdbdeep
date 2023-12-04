@@ -1,23 +1,32 @@
-<%--
-  Created by IntelliJ IDEA.
-  UserRepository.User: jfkrd
-  Date: 2023-12-03
-  Time: 오후 4:37
-  To change this template use File | Settings | File Templates.
---%>
 <%@page import="java.sql.*"%>
 <%@page import="java.text.*"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <style>
+        .back-button {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #F3B234;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 12px;
+        }
+        .back-button:hover {
+            background-color: #F3B234;
+        }
+    </style>
     <title>팀 가입</title>
 </head>
 <body>
 <%
         request.setCharacterEncoding("UTF-8");
 
-        // DB연결에 필요한 변수 선언
-        String URL = "jdbc:oracle:thin:@localhost:1521:orcl"; //mac : xe
+        String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
         String USER = "dbdbdeep";
         String PASSWORD = "comp322";
 
@@ -83,6 +92,6 @@
         }
     }
 %>
-<a href="TeamPage.jsp">뒤로가기</a><br/>
+<a href="TeamPage.jsp" class="back-button">뒤로가기</a>
 </body>
 </html>
