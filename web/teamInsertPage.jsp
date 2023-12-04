@@ -3,24 +3,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <style>
-        .back-button {
-            display: inline-block;
-            justify-content: center;
-            padding: 8px;
-            background-color: #F3B234;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            font-size: 12px;
-        }
-        .back-button:hover {
-            background-color: #F3B234;
-        }
-    </style>
-    <title>팀 가입</title>
 </head>
 <body>
 <%
@@ -36,8 +18,8 @@
     try {
         String user_id = (String) session.getAttribute("user_id");
         String team_id = request.getParameter("team_id");
-        if(checkTeam(team_id)){
-            response.sendRedirect("teamInsertPage.html");
+        if(checkTeam(team_id, user_id)){
+            response.sendRedirect("teamInsertPage.html?param1=1");
         }
         else {
             Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -50,17 +32,17 @@
             pstmt.setString(2, team_id);
             pstmt.executeUpdate();
             conn.commit();
-
-            response.sendRedirect("TeamPage.jsp");
             conn.close();
             pstmt.close();
+            response.sendRedirect("TeamPage.jsp?param1=1");
         }
     } catch (SQLException e) {
+        response.sendRedirect("TeamPage.jsp?param1=2");
         e.printStackTrace();
     }
 %>
 <%!
-    private static boolean checkTeam(String teamId) {
+    private static boolean checkTeam(String teamId, String userId) {
         try {
             String URL = "jdbc:oracle:thin:@localhost:1521:orcl"; //mac : xe
             String USER = "dbdbdeep";
@@ -76,13 +58,25 @@
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, teamId);
             ResultSet res = pstmt.executeQuery();
+            boolean boolFlag=false;
+            if (!res.next()) {
+                boolFlag = true;
+            }
 
+            sql = "SELECT *\r\nFROM UserP U, team T, participate P\r\n"
+                    + "WHERE P.puser_id =? AND P.pteam_id = ?";
+
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, userId);
+            pstmt.setString(2, teamId);
+            res = pstmt.executeQuery();
+            if (res.next()) {
+                boolFlag = true;
+            }
             conn.close();
             pstmt.close();
-            if (!res.next()) {
-                return true;
-            }
-            return false;
+            res.close();
+            return boolFlag;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;

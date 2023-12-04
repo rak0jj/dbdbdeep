@@ -2,6 +2,30 @@
 <html>
 <head>
     <title>TeamPage</title>
+
+    <%
+        request.setCharacterEncoding("UTF-8");
+        String error1 = request.getParameter("param1");
+
+        if(error1!=null) {
+            Integer EN1 = Integer.parseInt(error1);
+            if (EN1 == 1) {
+    %>
+    <script>
+        alert("팀 가입이 완료되었습니다.\n소속팀을 소속팀검색에서 확인해보세요.");
+    </script>
+    <%
+            }
+            else if (EN1 == 2) {
+    %>
+    <script>
+        alert("인터넷 혹은 서버 오류가 있습니다.");
+    </script>
+    <%
+            }
+        }
+    %>
+
     <style>
         body {
             font-family: 'Arial', sans-serif;

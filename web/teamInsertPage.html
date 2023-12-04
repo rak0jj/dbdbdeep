@@ -3,6 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>팀 가입</title>
+
+    <script>
+        var url = window.location.href;
+        if(url.includes("param1")) {
+            var EN = url.slice(-1);
+            if (EN == "1") {
+                alert("팀 가입에 실패하셨습니다.\n팀이 존재하지 않거나 이미 가입하셨습니다.");
+            }
+        }
+    </script>
+    <%
+    }
+    }
+    %>
+
     <style>
         header {
             background-color: #3A3D92;
