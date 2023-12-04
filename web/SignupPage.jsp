@@ -92,30 +92,35 @@
         alert("성별은 'M'혹은 'F'로 입력해주세요");
     </script>
     <%
-    } else if (EN1 == 2) {
+            }
+            else if (EN1 == 2) {
     %>
     <script>
         alert("나이와 키는 숫자로 입력해주세요");
     </script>
     <%
-    } else if (EN1 == 3) {
+            }
+            else if (EN1 == 3) {
     %>
     <script>
         alert("정상적이지 않은 값이 있습니다");
     </script>
     <%
-    } else if (EN1 == 4) {
+            }
+            else if (EN1 == 4) {
     %>
     <script>
         alert("아이디가 중복됩니다");
     </script>
     <%
-        }
+            }
+            else if (EN1 == 5) {
     %>
     <script>
-        alert(ENCODE);
+        alert("인터넷 혹은 서버 오류가 있습니다.");
     </script>
     <%
+            }
         }
     %>
 </head>

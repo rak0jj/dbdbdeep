@@ -122,10 +122,10 @@
     </script>
     <%
             }
-            else {
+            else if (EN1 == 3) {
     %>
     <script>
-        alert("인터넷 혹은 서버 오류가 있습니다.");
+        alert("회원가입에 성공하셨습니다!");
     </script>
     <%
             }
