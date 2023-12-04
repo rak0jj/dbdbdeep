@@ -174,7 +174,17 @@
                 <%
                 }
 
+        String checkSql = "SELECT address FROM userp WHERE user_id = ?";
+        PreparedStatement checkPstmt = conn.prepareStatement(checkSql);
+        checkPstmt.setString(1, (String) session.getAttribute("user_id"));
+        ResultSet checkRs = checkPstmt.executeQuery();
+        String checkAddress = checkRs.getString(1);
         String userAddress = (String) session.getAttribute("user_address");
+        if(checkAddress != userAddress){
+            userAddress = checkAddress;
+            session.setAttribute("user_address", checkAddress);
+        }
+
         String[] addressList = userAddress.split("\\s");
         String city = addressList[0] + '%';
         String nearbySql = "SELECT Place_id, Location\r\n"
