@@ -2,14 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <style>
+        .back-button {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #F3B234;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 12px;
+        }
+        .back-button:hover {
+            background-color: #F3B234;
+        }
+    </style>
     <title>소속팀 탈퇴</title>
 </head>
 <body>
+<a href="TeamPage.jsp" class="back-button">뒤로가기</a>
 <form action="teamDeletePage.jsp" method="post">
-  <h1>팀 탈퇴 기능</h1>
-  <input type="text" id="team_id" name="team_id" placeholder="팀 id"><br>
-  <input type="submit" value="탈퇴">
+    <h1>팀 탈퇴 기능</h1>
+    <input type="text" id="team_id" name="team_id" placeholder="팀 id"><br>
+    <input type="submit" value="탈퇴">
 </form>
-<a href="TeamPage.jsp">뒤로가기</a><br/>
 </body>
 </html>

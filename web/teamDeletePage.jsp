@@ -1,12 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  UserRepository.User: jfkrd
-  Date: 2023-12-03
-  Time: 오후 4:37
-  To change this template use File | Settings | File Templates.
---%>
-<%@page import="java.sql.*"%>
-<%@page import="java.text.*"%>
+<%@page import="java.sql.*" %>
+<%@page import="java.text.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -14,23 +7,21 @@
 </head>
 <body>
 <%
-        request.setCharacterEncoding("UTF-8");
+    request.setCharacterEncoding("UTF-8");
 
-        // DB연결에 필요한 변수 선언
-        String URL = "jdbc:oracle:thin:@localhost:1521:orcl"; //mac : xe
-        String USER = "dbdbdeep";
-        String PASSWORD = "comp322";
+    String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
+    String USER = "dbdbdeep";
+    String PASSWORD = "comp322";
 
-        Connection conn = null;
-        PreparedStatement pstmt;
+    Connection conn = null;
+    PreparedStatement pstmt;
 
     try {
         String user_id = (String) session.getAttribute("user_id");
         String team_id = request.getParameter("team_id");
-        if(checkTeam(team_id)){
+        if (checkTeam(team_id)) {
             response.sendRedirect("teamDeletePage.html");
-        }
-        else {
+        } else {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
             conn.setAutoCommit(false);

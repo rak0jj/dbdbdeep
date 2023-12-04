@@ -1,32 +1,53 @@
-<%--
-  Created by IntelliJ IDEA.
-  UserRepository.User: jfkrd
-  Date: 2023-12-03
-  Time: 오후 4:37
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@page import="java.sql.*"%>
-<%@page import="java.text.*"%>
+<%@page import="java.sql.*" %>
+<%@page import="java.text.*" %>
 <html>
 <head>
+    <style>
+        .main-button {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #3A3D92;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 12px;
+        }
+
+        .main-button:hover {
+            background-color: #3A3D92;
+        }
+
+        .bold-text {
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .content-text {
+            font-size: 15px;
+            font-weight: 400;
+        }
+    </style>
     <title>teamSearchPage</title>
-    <h1>소속팀 검색 페이지</h1>
-    <button onclick="location.href='TeamPage.jsp'">메인 페이지</button>
-    <h4>내 소속 팀</h4>
+    <a href="MainPage.jsp" class="main-button">메인 페이지</a>
+    <h1 class="bold-text">소속팀 검색 페이지</h1>
+    <h1 class="content-text">내 소속 팀</h1>
 </head>
 <ul>
     <body>
     <%
         request.setCharacterEncoding("UTF-8");
         // DB연결에 필요한 변수 선언
-        String URL = "jdbc:oracle:thin:@localhost:1521:orcl"; //mac : xe
+        String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
         String USER = "dbdbdeep";
         String PASSWORD = "comp322";
 
         Connection conn = null;
-        PreparedStatement pstmt=null;
-        ResultSet rs=null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
 
         try {
             String name = (String) session.getAttribute("user_name");
@@ -50,19 +71,32 @@
             while (rs.next()) {
         %>
         <tr>
-            <td><%= rs.getString(1) %></td>
-            <td><%= rs.getString(2) %></td>
-            <td><%= rs.getString(3) %></td>
-            <td><%= rs.getString(4) %></td>
+            <td><%= rs.getString(1) %>
+            </td>
+            <td><%= rs.getString(2) %>
+            </td>
+            <td><%= rs.getString(3) %>
+            </td>
+            <td><%= rs.getString(4) %>
+            </td>
         </tr>
         <%
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
-                if (rs != null) try { rs.close(); } catch(Exception e) {}
-                if (pstmt != null) try { pstmt.close(); } catch(Exception e) {}
-                if (conn != null) try { conn.close(); } catch(Exception e) {}
+                if (rs != null) try {
+                    rs.close();
+                } catch (Exception e) {
+                }
+                if (pstmt != null) try {
+                    pstmt.close();
+                } catch (Exception e) {
+                }
+                if (conn != null) try {
+                    conn.close();
+                } catch (Exception e) {
+                }
             }
         %>
     </table>
