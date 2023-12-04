@@ -13,20 +13,40 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
             height: 100vh;
-        }
-
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         label {
             display: block;
             margin-bottom: 15px;
+        }
+
+        #topform1 {
+            width:98%;
+            height:50px;
+            margin-top:0.5%;
+            padding-left:1%;
+            padding-top:13px;
+            padding-bottom:13px;
+            font-size: 32px;
+            font-weight: 600;
+            background-color: #c1d5f0;
+            color:black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        #centerform1 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position:absolute;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         input {
@@ -43,14 +63,14 @@
             width: 90%;
             padding: 6px;
             margin-bottom:3px;
-            background-color: #c8d9f0;
+            background-color: #6EA9F7;
             color: #ffffff;
             cursor: pointer;
             font-size: 20px;
         }
 
         input[type="submit"]:hover {
-            background-color: #c1d5f0;
+            background-color: #5a9bf5;
         }
 
         input[type="action"] {
@@ -82,10 +102,42 @@
         h1{
             margin-left: 10px;
         }
+        h2{
+            width:100%;
+        }
     </style>
+
+    <%
+        request.setCharacterEncoding("UTF-8");
+        String error1 = request.getParameter("param1");
+
+        if(error1!=null) {
+            Integer EN1 = Integer.parseInt(error1);
+            if (EN1 == 1) {
+                %>
+    <script>
+        alert("존재하지 않는 아이디거나 비밀번호가 틀렸습니다.");
+    </script>
+    <%
+            }
+            else {
+    %>
+    <script>
+        alert("인터넷 혹은 서버 오류가 있습니다.");
+    </script>
+    <%
+            }
+        }
+    %>
+
 </head>
 <body>
-<form action="LoginCheck.jsp" method="post">
+<form id="topform1">
+    <div>
+        <span>디비디비스포츠</span>
+    </div>
+</form>
+<form id="centerform1" action="LoginCheck.jsp" method="post">
     <fieldset>
         <h1>로그인</h1>
         <table>

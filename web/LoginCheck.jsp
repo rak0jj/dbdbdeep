@@ -49,7 +49,7 @@
 
             response.sendRedirect("MainPage.jsp"); // 페이지이동
         } else { // 로그인 실패
-            response.sendRedirect("LoginPage.jsp"); // 실패 페이지
+            response.sendRedirect("LoginPage.jsp?param1=1"); // 실패 페이지
         }
         conn.close();
         pstmt.close();
@@ -57,6 +57,6 @@
     }
     catch(Exception e) {
         e.  printStackTrace();
-        response.sendRedirect("LoginPage.jsp"); // 에러가 난 경우도 리다이렉트
+        response.sendRedirect("LoginPage.jsp?param1=2"); // 에러가 난 경우도 리다이렉트
     }
 %>
