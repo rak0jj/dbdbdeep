@@ -28,14 +28,15 @@
             padding: 10px 20px;
             margin: 5px;
             background-color: #FFFFFF;
-            color: #6EA9F7;
+            color: #3A3D92;
+            transition: background-color 0.3s;
             text-decoration: none;
             border-radius: 5px;
-            border: 2px solid #6EA9F7;
+            border: 2px solid #3A3D92;
         }
 
         .button-style:hover {
-            background-color: #5a9bf5;
+            background-color: #3A3D92;
             color: #FFFFFF;
         }
 
@@ -43,12 +44,13 @@
         .content-button-style {
             width:30%;
             height:40px;
-            font-size: 20px;
+            font-size: 25px;
             display: inline-block;
             padding: 10px 20px;
-            margin: 5px;
-            background-color: #6EA9F7;
+            margin: 8px 30px;
+            background-color: #3A3D92;
             color: #FFFFFF;
+            transition: background-color 0.3s;
             text-decoration: none;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -56,7 +58,7 @@
 
         .content-button-style:hover {
             background-color: #FFFFFF;
-            color: #5a9bf5;
+            color: #2d2d82;
         }
 
         .right-align {
@@ -79,7 +81,7 @@
             margin-left:0.35%;
             font-size: 32px;
             font-weight: 400;
-            color:#6EA9F7;
+            color:#3A3D92;
             display: flex;
             flex-direction: column;
         }

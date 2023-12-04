@@ -13,7 +13,6 @@
     <title>연락처 변경</title>
 </head>
 <body>
-</form><br/>
 <%
     request.setCharacterEncoding("UTF-8");
     String URL = "jdbc:oracle:thin:@localhost:1521:orcl"; //mac : xe

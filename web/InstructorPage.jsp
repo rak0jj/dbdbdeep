@@ -50,23 +50,6 @@
             margin-bottom: 20px;
         }
 
-        .main-button {
-            display: inline-block;
-            justify-content: center;
-            padding: 8px;
-            background-color: #c8d9f0;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            font-size: 12px;
-        }
-
-        .main-button:hover {
-            background-color: #c8d9f0;
-        }
-
         h1 {
             font-size: 28px;
             font-weight: bold;
@@ -93,22 +76,56 @@
             background-color: #3A3D92;
             color: #fff;
         }
+        .main-button2 {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #FFFFFF;
+            color: #2d2d82;
+            border: 1px solid #ccc;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .main-button2:hover {
+            background-color: #3A3D92;
+            color: #FFFFFF;
+        }
+        .main-button {
+            display: inline-block;
+            justify-content: center;
+            padding: 5px;
+            background-color: #3A3D92;
+            color: #FFFFFF;
+            border: 1px solid #ccc;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 12px;
+        }
+
+        .main-button:hover {
+            background-color: #FFFFFF;
+            color: #2d2d82;
+        }
     </style>
 </head>
 <body>
 <header>
     <div>
         <span style="font-family: 굴림체; font-size: 30px; text-align: center;">강사 페이지</span>
-        <div>
-            <a href="MainPage.jsp" class="main-button" style="float: right;">메인 페이지</a>
-        </div>
     </div>
 </header>
+<a href="MainPage.jsp" class="main-button2" style="float: right; position:fixed; margin-left: 90%; margin-top: 0.7%;">메인 페이지</a>
 <div class="container">
-    <a href="InstructorSearch.jsp" class="main-button">강사 정보 검색하기</a><br/><br/>
+    <a href="InstructorSearch.jsp" class="main-button" style="font-size:15px; padding:8px">강사 정보 검색하기</a><br/><br/>
     <%
         request.setCharacterEncoding("UTF-8");
-        String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
+        String URL = "jdbc:oracle:thin:@localhost:1521:orcl"; //mac : xe
         String USER = "dbdbdeep";
         String PASSWORD = "comp322";
 

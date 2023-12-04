@@ -50,16 +50,19 @@
             justify-content: center;
             padding: 8px;
             background-color: #F3B234;
-            color: #fff;
+            color: white;
+            transition: background-color 0.3s;
             text-decoration: none;
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s;
             font-size: 12px;
+            border: 2px solid #F3B234;;
         }
 
         .back-button:hover {
-            background-color: #F3B234;
+            background-color: white;
+            color: #F3B234;
         }
 
         .content-button-style {
@@ -68,6 +71,7 @@
             margin: 5px;
             background-color: #3A3D92;
             color: #FFFFFF;
+            transition: background-color 0.3s;
             text-decoration: none;
             border-radius: 5px;
             border: 2px solid #3A3D92;

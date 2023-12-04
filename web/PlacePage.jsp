@@ -94,27 +94,59 @@
             background-color: #3A3D92;
             color: #fff;
         }
+        .main-button2 {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #FFFFFF;
+            color: #2d2d82;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .main-button2:hover {
+            background-color: #3A3D92;
+            color: #FFFFFF;
+        }
+        .main-button {
+            display: inline-block;
+            justify-content: center;
+            padding: 5px;
+            background-color: #3A3D92;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 12px;
+        }
+
+        .main-button:hover {
+            background-color: #FFFFFF;
+            color: #2d2d82;
+        }
     </style>
 </head>
 <body>
 <header>
     <div>
         <span style="font-family: 굴림체; font-size: 30px; text-align: center;">구장 페이지</span>
-        <div>
-            <a href="MainPage.jsp" class="main-button" style="float: right;">메인페이지</a>
-        </div>
     </div>
 </header>
+<a href="MainPage.jsp" class="main-button2" style="float: right; position:fixed; margin-left: 90%; margin-top: 0.7%;">메인 페이지</a>
 <div class="container">
     <h2>1. 지역 별 구장 정보</h2>
     <form action="PlacePage.jsp" method="post">
-        <input type="text" id="place" name="place" placeholder="지역">
-        <input type="submit" value="검색">
+        <input type="text" id="place" name="place" placeholder="지역" style="padding:3px; font-size:15px; width:130px">
+        <input type="submit" value="검색" class="main-button" style="font-size:18px; width:60px; margin-left:10px"><br>
     </form>
     <br/>
     <%
         request.setCharacterEncoding("UTF-8");
-        String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
+        String URL = "jdbc:oracle:thin:@localhost:1521:orcl"; //mac : xe
         String USER = "dbdbdeep";
         String PASSWORD = "comp322";
 

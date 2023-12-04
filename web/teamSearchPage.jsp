@@ -105,19 +105,32 @@
             background-color: #3A3D92;
             color: #fff;
         }
+        .main-button2 {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #FFFFFF;
+            color: #2d2d82;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .main-button2:hover {
+            background-color: #3A3D92;
+            color: #FFFFFF;
+        }
     </style>
 </head>
 <body>
 <header>
     <div>
         <span style="font-family: 굴림체; font-size: 30px; text-align: center;">소속 팀 검색 페이지</span>
-        <div>
-            <a href="MainPage.jsp" class="main-button" style="float: right; margin-left: 5px;">메인 페이지</a>
-            <a href="TeamPage.jsp" class="back-button" style="float: right;">뒤로가기</a>
-        </div>
     </div>
 </header>
-
+<a href="MainPage.jsp" class="main-button2" style="float: right; position:fixed; margin-left: 90%; margin-top: 0.7%;">메인 페이지</a>
 <div class="container">
     <%
         request.setCharacterEncoding("UTF-8");
