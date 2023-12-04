@@ -5,22 +5,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
 <head>
+    <style>
+        .back-button {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #F3B234;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 12px;
+        }
+
+        .back-button:hover {
+            background-color: #F3B234;
+        }
+    </style>
     <title>Place Page</title>
 </head>
+<a href="MainPage.jsp" class="back-button">뒤로가기</a><br/>
 <h1>구장 페이지</h1>
+
 <table border="1">
-    <h2>지역 별 구장 정보</h2>
+    <h2>1. 지역 별 구장 정보</h2>
     <form action="PlacePage.jsp" method="post">
         <input type="text" id="place" name="place" placeholder="지역">
         <input type="submit" value="검색">
     </form><br/>
-    <a href="MainPage.jsp">뒤로가기</a><br/>
     <ul>
         <body>
         <%
             request.setCharacterEncoding("UTF-8");
             // DB연결에 필요한 변수 선언
-            String URL = "jdbc:oracle:thin:@localhost:1521:orcl"; //mac : xe
+            String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
             String USER = "dbdbdeep";
             String PASSWORD = "comp322";
 
@@ -40,7 +59,7 @@
         <tr>
             <th>구장 ID</th>
             <th>지역</th>
-            <th>스포츠</th>
+            <th>종목</th>
             <th>시간 당 비용</th>
         </tr>
         <%
@@ -64,7 +83,7 @@
             countRs = countPstmt.executeQuery();
         %>
         <table border="1"><br>
-            <h2>지역 별 구장 수</h2>
+            <h2>2. 지역 별 구장 수</h2>
             <tr>
                 <th>지역</th>
                 <th>구장 수</th>
@@ -100,7 +119,7 @@
         nearbyRs = nearbyPstmt.executeQuery();
         %>
             <table border="1"><br>
-                <h2>내 주변 구장</h2>
+                <h2>3. 내 주변 구장</h2>
                 <tr>
                     <th>내 주변 구장 ID</th>
                     <th>위치</th>
