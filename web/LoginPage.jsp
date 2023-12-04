@@ -29,7 +29,7 @@
             padding-top:13px;
             padding-bottom:13px;
             font-size: 32px;
-            font-weight: 600;
+            font-weight: 400;
             background-color: #c1d5f0;
             color:black;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

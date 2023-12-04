@@ -28,32 +28,35 @@
             padding: 10px 20px;
             margin: 5px;
             background-color: #FFFFFF;
-            color: #3A923D;
+            color: #6EA9F7;
             text-decoration: none;
             border-radius: 5px;
-            border: 2px solid #3A923D;
+            border: 2px solid #6EA9F7;
         }
 
         .button-style:hover {
-            background-color: #3A923D;
+            background-color: #5a9bf5;
             color: #FFFFFF;
         }
 
 
         .content-button-style {
+            width:30%;
+            height:40px;
+            font-size: 20px;
             display: inline-block;
             padding: 10px 20px;
             margin: 5px;
-            background-color: #3A3D92;
+            background-color: #6EA9F7;
             color: #FFFFFF;
             text-decoration: none;
-            border-radius: 5px;
-            border: 2px solid #3A3D92;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
         .content-button-style:hover {
             background-color: #FFFFFF;
-            color: #3A3D92;
+            color: #5a9bf5;
         }
 
         .right-align {
@@ -69,9 +72,21 @@
             font-size: 20px;
             font-weight: 400;
         }
+        #toptext1 {
+            position:fixed;
+            width:260px;
+            margin-top:0.23%;
+            margin-left:0.35%;
+            font-size: 32px;
+            font-weight: 400;
+            color:#6EA9F7;
+            display: flex;
+            flex-direction: column;
+        }
     </style>
 <body>
 <form>
+    <a id="toptext1">디비디비스포츠</a>
     <div class="right-align">
         <%
             String userId = String.valueOf(session.getAttribute("user_name"));
