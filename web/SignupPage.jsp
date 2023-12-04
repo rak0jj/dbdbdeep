@@ -25,26 +25,43 @@
 
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
         }
 
         input {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
+            padding: 6px;
+            margin-bottom: 15px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
 
         input[type="submit"] {
+            margin-left:5%;
+            width: 90%;
             background-color: #4caf50;
             color: #fff;
             cursor: pointer;
+            font-size: 16px;
         }
 
         input[type="submit"]:hover {
             background-color: #45a049;
+        }
+
+        input[type="action"] {
+            font-size: 16px;
+            margin-left:5%;
+            width: 90%;
+            background-color: #bee6be;
+            color: #fff;
+            cursor: pointer;
+            padding: 6px;
+            border: none;
+            border-radius: 4px;
+            text-align: center;
+
         }
 
         table {
@@ -54,6 +71,10 @@
 
         table td {
             padding: 8px;
+        }
+
+        h1{
+            margin-left: 10px;
         }
     </style>
     <title>dbdbDeep 회원가입</title>
@@ -104,6 +125,9 @@
     <fieldset>
         <table>
             <tr>
+                <h1>회원가입</h1>
+            </tr>
+            <tr>
                 <td><label for="userId">아이디</label></td>
                 <td><input type="text" name="userId" id="userId" placeholder="2023117089" /></td>
             </tr>
@@ -133,8 +157,8 @@
             </tr>
         </table>
         <input type="submit" value="회원가입">
+        <input type="action" id="signup2" onclick="window.location.href='LoginPage.jsp'" value="뒤로가기">
     </fieldset>
 </form>
-<a href="LoginPage.jsp">뒤로가기</a><br/>
 </body>
 </html>
