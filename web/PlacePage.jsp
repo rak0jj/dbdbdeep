@@ -206,16 +206,20 @@
                 <%
                 }
 
+        //동시성 제어 파트
         String checkSql = "SELECT address FROM userp WHERE user_id = ?";
         PreparedStatement checkPstmt = conn.prepareStatement(checkSql);
         checkPstmt.setString(1, (String) session.getAttribute("user_id"));
         ResultSet checkRs = checkPstmt.executeQuery();
+        checkRs.next();
         String checkAddress = checkRs.getString(1);
         String userAddress = (String) session.getAttribute("user_address");
+
         if(checkAddress != userAddress){
             userAddress = checkAddress;
             session.setAttribute("user_address", checkAddress);
         }
+        System.out.println(5);
 
         String[] addressList = userAddress.split("\\s");
         String city = addressList[0] + '%';
