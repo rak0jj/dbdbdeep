@@ -100,7 +100,7 @@
 </head>
 
 <body>
-<form name="frm" action="SignUpCheck.jsp" method="post">
+<form name="frm" action="SignupCheck.jsp" method="post">
     <fieldset>
         <table>
             <tr>
@@ -135,5 +135,6 @@
         <input type="submit" value="회원가입">
     </fieldset>
 </form>
+<a href="LoginPage.jsp">뒤로가기</a><br/>
 </body>
 </html>

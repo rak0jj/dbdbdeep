@@ -12,7 +12,7 @@
 <%
     request.setCharacterEncoding("UTF-8");
     // DB연결에 필요한 변수 선언
-    String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
+    String URL = "jdbc:oracle:thin:@localhost:1521:orcl"; //mac : xe
     String USER = "dbdbdeep";
     String PASSWORD = "comp322";
 
@@ -57,7 +57,7 @@
             if (conn != null) try { conn.close(); } catch(Exception e) {}
         }
     %>
-
+    <button onclick="location.href='MainPage.jsp'">메인 페이지</button>
 </table>
 </body>
 </html>

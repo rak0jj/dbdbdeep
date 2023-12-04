@@ -31,9 +31,22 @@
         rs = pstmt.executeQuery();
 
         if (rs.next()) { // 로그인 성공(인증의 수단 session)
-            session.setAttribute("user_id",userid);
-            session.setAttribute("phone_number",pwd);
-            session.setAttribute("user_address",rs.getString("address")); // 주소 정보를 세션에 저장
+            String id=rs.getString(1);
+            String name=rs.getString(2);
+            String sex=rs.getString(3);
+            int age=rs.getInt(4);
+            int height=rs.getInt(5);
+            String phonenum=rs.getString(6);
+            String address=rs.getString(7);
+
+            session.setAttribute("user_id",id);
+            session.setAttribute("user_name",name);
+            session.setAttribute("user_sex",sex);
+            session.setAttribute("user_age",age);
+            session.setAttribute("user_height",height);
+            session.setAttribute("user_phone_number",phonenum);
+            session.setAttribute("user_address",address);
+
             response.sendRedirect("MainPage.jsp"); // 페이지이동
         } else { // 로그인 실패
             response.sendRedirect("LoginPage.jsp"); // 실패 페이지

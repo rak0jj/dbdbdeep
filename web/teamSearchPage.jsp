@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  UserRepository.User: seakim
-  Date: 12/2/23
-  Time: 9:03 PM
+  UserRepository.User: jfkrd
+  Date: 2023-12-03
+  Time: 오후 4:37
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,14 +10,10 @@
 <%@page import="java.text.*"%>
 <html>
 <head>
-    <title>UserPage</title>
-    <h1>유저 정보 검색 페이지</h1>
-    <form action="UserPage.jsp" method="post">
-        <h3>검색을 원하는 사용자 이름 입력</h3></br>
-        <input type="text" id="name" name="name" placeholder="이름">
-        <input type="submit" value="검색">
-    </form>
-    <button onclick="location.href='MainPage.jsp'">메인 페이지</button>
+    <title>teamSearchPage</title>
+    <h1>소속팀 검색 페이지</h1>
+    <button onclick="location.href='TeamPage.jsp'">메인 페이지</button>
+    <h4>내 소속 팀</h4>
 </head>
 <ul>
     <body>
@@ -33,32 +29,31 @@
         ResultSet rs=null;
 
         try {
+            String name = (String) session.getAttribute("user_name");
             Class.forName("oracle.jdbc.driver.OracleDriver");
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
-            String sql = "SELECT user_id, sex, age, height, phone_number\r\n"
-                    + "FROM UserP \r\n"
-                    + "WHERE name = ?";
+            String sql = "SELECT U.name, T.team_id, T.sports, T.captain_id\r\n"
+                    + "FROM UserP U, team T, participate P\r\n"
+                    + "WHERE U.user_id = P.puser_id AND P.pteam_id = T.team_id AND U.name = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, request.getParameter("name"));
+            pstmt.setString(1, name);
             rs = pstmt.executeQuery();
     %>
     <table border="1">
         <tr>
-            <th>사용자 ID</th>
-            <th>성별</th>
-            <th>나이</th>
-            <th>신장</th>
-            <th>연락처</th>
+            <th>사용자 이름</th>
+            <th>팀 id</th>
+            <th>종목</th>
+            <th>주장 id</th>
         </tr>
         <%
             while (rs.next()) {
         %>
         <tr>
             <td><%= rs.getString(1) %></td>
-            <td><%= (rs.getString(2)=="M"? "남자":"여자") %></td>
-            <td><%= rs.getInt(3) %>살</td>
-            <td><%= rs.getInt(4) %>cm</td>
-            <td><%= rs.getString(5) %></td>
+            <td><%= rs.getString(2) %></td>
+            <td><%= rs.getString(3) %></td>
+            <td><%= rs.getString(4) %></td>
         </tr>
         <%
                 }

@@ -17,7 +17,7 @@
     <body>
     <%
         request.setCharacterEncoding("UTF-8");
-        String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
+        String URL = "jdbc:oracle:thin:@localhost:1521:orcl"; //mac : xe
         String USER = "dbdbdeep";
         String PASSWORD = "comp322";
 

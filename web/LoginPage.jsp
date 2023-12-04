@@ -87,7 +87,7 @@
 <body>
 <form action="LoginCheck.jsp" method="post">
 
-    <form name="frm" action="SignupCheck.jsp" method="post">
+    <form name="frm" action="LoginCheck.jsp" method="post">
         <fieldset>
             <table>
                 <tr>

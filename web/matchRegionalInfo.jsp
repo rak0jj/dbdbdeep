@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: jfkrd
+  UserRepository.User: jfkrd
   Date: 2023-12-03
   Time: 오후 2:16
   To change this template use File | Settings | File Templates.
@@ -66,7 +66,7 @@
         response.sendRedirect("matchRegionalInfo.html");
     }
 %>
-
+<a href="MatchPage.jsp">뒤로가기</a><br/>
 </body>
 </html>
 

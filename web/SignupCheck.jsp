@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: bmj20
+  UserRepository.User: bmj20
   Date: 2023-12-03
   Time: 오후 2:22
   To change this template use File | Settings | File Templates.
@@ -40,7 +40,7 @@
         }
     }
     if(stopFlag>0) {
-        response.sendRedirect("SignUp.jsp?error1=" + stopFlag);
+        response.sendRedirect("SignupPage.jsp?error1=" + stopFlag);
         return;
     }
 
@@ -58,6 +58,7 @@
     try {
         Class.forName("oracle.jdbc.driver.OracleDriver");
         conn = DriverManager.getConnection(URL, USER, PASSWORD);
+        conn.setAutoCommit(false);
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, userId);
 
@@ -65,7 +66,7 @@
         rs = pstmt.executeQuery();
         String nextPage = null;
         if (rs.next()) { // 중복 아이디 존재
-            nextPage = "SignUp.jsp?error1=4";
+            nextPage = "SignupPage.jsp?error1=4";
         } else {// 회원가입 성공
             sql = "INSERT INTO userp VALUES(?,?,?,?,?,?,?)";
             pstmt = conn.prepareStatement(sql);
@@ -81,7 +82,7 @@
             pstmt.executeUpdate();
             conn.commit();
 
-            nextPage = "LoginPage.html?param1=" + userId;
+            nextPage = "LoginPage.jsp?param1=" + userId;
         }
         conn.close();
         pstmt.close();
@@ -90,6 +91,6 @@
     }
     catch(Exception e) {
         e.printStackTrace();
-        response.sendRedirect("LoginPage.html"); // 에러가 난 경우도 리다이렉트
+        response.sendRedirect("LoginPage.jsp"); // 에러가 난 경우도 리다이렉트
     }
 %>

@@ -13,13 +13,14 @@
     <form action="PlacePage.jsp" method="post">
         <input type="text" id="place" name="place" placeholder="지역">
         <input type="submit" value="검색">
-    </form>
+    </form><br/>
+    <a href="MainPage.jsp">뒤로가기</a><br/>
     <ul>
         <body>
         <%
             request.setCharacterEncoding("UTF-8");
             // DB연결에 필요한 변수 선언
-            String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
+            String URL = "jdbc:oracle:thin:@localhost:1521:orcl"; //mac : xe
             String USER = "dbdbdeep";
             String PASSWORD = "comp322";
 
@@ -54,6 +55,7 @@
             </td>
             <td><%= rs.getString(4) %>원</td>
         </tr>
+
         <%
             }
 
@@ -61,7 +63,6 @@
             countPstmt = conn.prepareStatement(countSql);
             countRs = countPstmt.executeQuery();
         %>
-
         <table border="1"><br>
             <h2>지역 별 구장 수</h2>
             <tr>
@@ -80,10 +81,19 @@
                 <%
                 }
 
-    String userAddress = (String) session.getAttribute("user_address");
+        String userAddress = (String) session.getAttribute("user_address");
         String[] addressList = userAddress.split("\\s");
         String city = addressList[0] + '%';
-        String nearbySql = "SELECT Place_id, Location FROM place WHERE Place_id IN ( SELECT Mplace_id FROM game WHERE Mplace_id IN ( SELECT Place_id FROM place WHERE Location LIKE ? ) )";
+        String nearbySql = "SELECT Place_id, Location\r\n"
+                     + "FROM place\r\n"
+                     + "WHERE Place_id IN (\r\n"
+                     + "         SELECT Mplace_id\r\n"
+                     + "         FROM game\r\n"
+                     + "         WHERE Mplace_id IN (\r\n"
+                     + "                  SELECT Place_id\r\n"
+                     + "                  FROM place\r\n"
+                     + "                  WHERE Location LIKE ?\r\n"
+                     + "         )\r\n" + ")";
 
         nearbyPstmt = conn.prepareStatement(nearbySql);
         nearbyPstmt.setString(1, city);
