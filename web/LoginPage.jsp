@@ -30,8 +30,8 @@
             padding-bottom:13px;
             font-size: 32px;
             font-weight: 400;
-            background-color: #c1d5f0;
-            color:black;
+            background-color: #3A3D92;;
+            color:white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
@@ -63,14 +63,14 @@
             width: 90%;
             padding: 6px;
             margin-bottom:3px;
-            background-color: #6EA9F7;
+            background-color: #3A3D92;
             color: #ffffff;
             cursor: pointer;
             font-size: 20px;
         }
 
         input[type="submit"]:hover {
-            background-color: #5a9bf5;
+            background-color: #2d2d82;
         }
 
         input[type="action"] {
