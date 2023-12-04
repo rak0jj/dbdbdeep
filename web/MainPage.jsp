@@ -69,15 +69,7 @@
             font-size: 20px;
             font-weight: 400;
         }
-
-        .content-text {
-            padding: 10px;
-            font-size: 20px;
-            font-weight: 400;
-        }
-
     </style>
-
 <body>
 <form>
     <div class="right-align">
@@ -93,9 +85,7 @@
         <a href="delete_ok.jsp" class="button-style">회원탈퇴</a>
     </div>
 </form>
-
 <content-body>
-
     <a href="UserPage.jsp" class="content-button-style">> 다른 유저</a>
     <a href="TeamPage.jsp" class="content-button-style">> 팀</a>
     <a href="PlacePage.jsp" class="content-button-style">> 구장</a>
