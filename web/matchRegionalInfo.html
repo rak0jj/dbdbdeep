@@ -48,8 +48,8 @@
             display: inline-block;
             justify-content: center;
             padding: 8px;
-            background-color: #c8d9f0;
-            color: #fff;
+            background-color: #3A3D92;
+            color: #FFFFFF;
             text-decoration: none;
             border-radius: 4px;
             cursor: pointer;
@@ -58,7 +58,8 @@
         }
 
         .main-button:hover {
-            background-color: #c8d9f0;
+            background-color: #FFFFFF;
+            color: #2d2d82;
         }
 
         h1 {
@@ -87,6 +88,23 @@
             background-color: #3A3D92;
             color: #fff;
         }
+        .main-button2 {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #FFFFFF;
+            color: #2d2d82;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .main-button2:hover {
+            background-color: #3A3D92;
+            color: #FFFFFF;
+        }
     </style>
     <title>지역별 경기 정보</title>
 </head>
@@ -94,16 +112,14 @@
 <header>
     <div>
         <span style="font-family: 굴림체; font-size: 30px; text-align: center;">지역별 경기 정보 검색 페이지</span>
-        <div>
-            <a href="MatchPage.jsp" class="main-button" style="float: right;">뒤로 가기</a>
-        </div>
     </div>
 </header>
+<a href="MainPage.jsp" class="main-button2" style="float: right; position:fixed; margin-left: 90%; margin-top: 0.7%;">메인 페이지</a>
 <div class="container">
     <form action="matchRegionalInfo.jsp" method="post">
-        <input type="text" id="sports" name="sports" placeholder="종목"><br>
-        <input type="text" id="region" name="region" placeholder="지역"><br>
-        <input type="submit" value="검색">
+        <input type="text" id="sports" name="sports" placeholder="종목" style="font-size:15px; padding:5px; width:160px;">
+        <input type="text" id="salary" name="salary" placeholder="지역" style="font-size:15px; padding:5px; width:160px; margin-left: 10px;">
+        <input type="submit" value="검색" class="main-button" style="font-size:18px; padding:5px 15px;">
     </form>
 </div>
 </body>

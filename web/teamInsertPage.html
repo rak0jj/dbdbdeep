@@ -59,22 +59,57 @@
         .back-button:hover {
             background-color: #F3B234;
         }
+
+        .main-button {
+            margin-top:10px;
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #3A3D92;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 12px;
+        }
+
+        .main-button:hover {
+            background-color: #FFFFFF;
+            color: #2d2d82;
+        }
+
+        .main-button2 {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #FFFFFF;
+            color: #2d2d82;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .main-button2:hover {
+            background-color: #3A3D92;
+            color: #FFFFFF;
+        }
     </style>
 </head>
 <body>
 <header>
     <div>
         <span style="font-family: 굴림체; font-size: 30px; text-align: center;">팀 가입 기능</span>
-        <div>
-            <a href="TeamPage.jsp" class="back-button" style="float: right;">뒤로가기</a>
-        </div>
     </div>
 </header>
+<a href="MainPage.jsp" class="main-button2" style="float: right; position:fixed; margin-left: 90%; margin-top: 0.7%;">메인 페이지</a>
 <div class="container">
-    <form action="teamInsertPage.jsp" method="post">
-        <h1>팀 가입 기능</h1>
-        <input type="text" id="team_id" name="team_id" placeholder="팀 id"><br>
-        <input type="submit" value="가입">
+    <form action="teamInsertPage.jsp" method="post" style="margin-top:30px;">
+        <h2>가입할 팀의 코드를 입력해주세요</h2>
+        <input type="text" id="team_id" name="team_id" placeholder="팀 id" style="font-size:18px;"><br>
+        <input type="submit" value="검색" class="main-button" style="font-size:20px; width:80px"><br>
     </form>
 </div>
 </body>

@@ -65,12 +65,14 @@
             margin-bottom:3px;
             background-color: #3A3D92;
             color: #ffffff;
+            transition: background-color 0.3s;
             cursor: pointer;
             font-size: 20px;
         }
 
         input[type="submit"]:hover {
-            background-color: #2d2d82;
+            background-color: #ffffff;
+            color: #3A3D92;
         }
 
         input[type="action"] {
