@@ -30,9 +30,27 @@
             font-size: 15px;
             font-weight: 400;
         }
+
+        .back-button {
+            display: inline-block;
+            justify-content: center;
+            padding: 8px;
+            background-color: #F3B234;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 12px;
+        }
+
+        .back-button:hover {
+            background-color: #F3B234;
+        }
     </style>
     <title>teamSearchPage</title>
     <a href="MainPage.jsp" class="main-button">메인 페이지</a>
+    <a href="TeamPage.jsp" class="back-button">뒤로가기</a>
     <h1 class="bold-text">소속팀 검색 페이지</h1>
     <h1 class="content-text">내 소속 팀</h1>
 </head>
