@@ -57,7 +57,7 @@
 </head>
 <body>
 <form>
-    <a href="MainPage.jsp" class="back-button">4. 뒤로가기</a>
+    <a href="MainPage.jsp" class="back-button">뒤로가기</a>
     <h1>팀 페이지</h1>
     <a href="teamInsertPage.html" class="content-button-style">1. 팀 가입</a>
     <a href="teamSearchPage.jsp" class="content-button-style">2. 소속 팀 검색</a>
