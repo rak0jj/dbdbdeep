@@ -3,14 +3,59 @@
 <%@page import="java.sql.PreparedStatement" %>
 <%@page import="java.sql.Connection" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Page</title>
     <style>
-        .back-button {
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #3A3D92;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .button-style {
+            display: inline-block;
+            padding: 10px;
+            background-color: #3A3D92;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .main-button {
             display: inline-block;
             justify-content: center;
             padding: 8px;
-            background-color: #F3B234;
+            background-color: #c8d9f0;
             color: #fff;
             text-decoration: none;
             border-radius: 4px;
@@ -19,49 +64,80 @@
             font-size: 12px;
         }
 
-        .back-button:hover {
-            background-color: #F3B234;
+        .main-button:hover {
+            background-color: #c8d9f0;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #3A3D92;
+            color: #fff;
         }
     </style>
-    <title>Place Page</title>
 </head>
-<a href="MainPage.jsp" class="back-button">뒤로가기</a><br/>
-<h1>구장 페이지</h1>
-<table border="1">
+<body>
+<header>
+    <div>
+        <span style="font-family: 굴림체; font-size: 30px; text-align: center;">구장 페이지</span>
+        <div>
+            <a href="MainPage.jsp" class="main-button" style="float: right;">메인페이지</a>
+        </div>
+    </div>
+</header>
+<div class="container">
     <h2>1. 지역 별 구장 정보</h2>
     <form action="PlacePage.jsp" method="post">
         <input type="text" id="place" name="place" placeholder="지역">
         <input type="submit" value="검색">
     </form>
     <br/>
-    <ul>
-        <body>
-        <%
-            request.setCharacterEncoding("UTF-8");
-            String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
-            String USER = "dbdbdeep";
-            String PASSWORD = "comp322";
+    <%
+        request.setCharacterEncoding("UTF-8");
+        String URL = "jdbc:oracle:thin:@localhost:1521:xe"; //mac : xe
+        String USER = "dbdbdeep";
+        String PASSWORD = "comp322";
 
-            Connection conn = null;
-            PreparedStatement pstmt = null, countPstmt = null, nearbyPstmt = null;
-            ResultSet rs = null, countRs = null, nearbyRs = null;
+        Connection conn = null;
+        PreparedStatement pstmt = null, countPstmt = null, nearbyPstmt = null;
+        ResultSet rs = null, countRs = null, nearbyRs = null;
 
-            try {
-                Class.forName("oracle.jdbc.driver.OracleDriver");
-                conn = DriverManager.getConnection(URL, USER, PASSWORD);
-                String sql = "SELECT Place_id, Location, Sports, Price_per_time FROM place WHERE Location LIKE ?";
-                pstmt = conn.prepareStatement(sql);
-                pstmt.setString(1, request.getParameter("place") + "%");
-                rs = pstmt.executeQuery();
-        %>
-
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            String sql = "SELECT Place_id, Location, Sports, Price_per_time FROM place WHERE Location LIKE ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, request.getParameter("place") + "%");
+            rs = pstmt.executeQuery();
+    %>
+    <table border="1">
         <tr>
             <th>구장 ID</th>
             <th>지역</th>
             <th>종목</th>
             <th>시간 당 비용</th>
         </tr>
-        <%
+            <%
             while (rs.next()) {
         %>
         <tr>
@@ -73,7 +149,7 @@
             </td>
             <td><%= rs.getString(4) %>원</td>
         </tr>
-        <%
+            <%
             }
 
             String countSql = "SELECT SUBSTR(Location, 1, 2) AS ShortLocation, COUNT(*) AS StadiumCount FROM place GROUP BY SUBSTR(Location, 1, 2)";
@@ -167,6 +243,6 @@
                     }
                 %>
             </table>
-        </body>
-    </ul>
+</div>
+</body>
 </html>
